@@ -1,0 +1,150 @@
+import {StyleSheet} from 'react-native';
+export default StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    flex: 1,
+    color: 'rgba(0, 0, 0, 0.85)',
+    fontSize: 14,
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+    lineHeight: 15,
+  },
+  content: {
+    paddingHorizontal: 15,
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#f5422a',
+    color: '#fff',
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+    paddingTop: 40,
+  },
+  icon: {
+    color: '#fff',
+  },
+  headerName: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 18,
+    lineHeight: 24,
+  },
+  img: {
+    width: '100%',
+    height: '100%',
+  },
+  container_top: {
+    marginTop: 10,
+  },
+  container_heading: {
+    color: '#727272',
+    fontSize: 26,
+    fontWeight: '900',
+  },
+  container_heading_sub: {color: '#727272', fontSize: 20, fontWeight: '900'},
+  container_desc: {
+    color: '#292929',
+    fontSize: 16,
+    fontWeight: '400',
+    lineHeight: 22,
+  },
+  container_body: {
+    marginTop: 10,
+  },
+  listJobs_wrapper: {
+    marginTop: 10,
+  },
+  jobItem_wrapper: {
+    marginTop: 10,
+    borderWidth: 2,
+    borderColor: '#e8e8e8',
+    borderRadius: 16,
+    cursor: 'pointer',
+    padding: 15,
+  },
+  jobItem_title: {
+    fontSize: 18,
+    lineHeight: 20,
+    marginBottom: 4,
+    marginTop: 0,
+    fontWeight: '600',
+  },
+  jobItem_salary: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  jobItem_icon: {color: '#57595b', fontSize: 15},
+  jobItem_name: {
+    color: '#57595b',
+    fontSize: 13,
+    fontWeight: '600',
+    lineHeight: 18,
+    marginLeft: 7,
+  },
+  jobItem_skills: {
+    marginTop: 16,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  jobItem_skills_item: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#d2d3d3',
+    fontSize: 13,
+    fontWeight: '400',
+    marginRight: 10,
+    paddingVertical: 3,
+    paddingHorizontal: 5,
+    marginTop: 4,
+  },
+  jobItem_createdFromNow: {
+    marginTop: 16,
+    color: '#06c',
+    fontSize: 14,
+  },
+  recruitmentDetail_info: {
+    borderTopColor: '#e9e9e9',
+    borderBottomColor: '#e9e9e9',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    paddingVertical: 10,
+  },
+  recruitmentDetail__item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  relatedJobs: {},
+  recruitmentDetail__salary_title: {
+    color: '#57595b',
+    fontWeight: '600',
+    lineHeight: 18,
+    marginTop: 4,
+  },
+  recruitmentDetail__icon: {
+    marginRight: 4,
+  },
+  recruitmentDetail__name: {
+    color: '#57595b',
+    fontWeight: '400',
+    lineHeight: 18,
+    marginTop: 4,
+  },
+  recruitmentDetail_main: {},
+  recruitmentDetail_heading: {
+    color: '#242424',
+    fontSize: 20,
+    fontWeight: '600',
+    marginTop: 20,
+  },
+  recruitmentDetail_textContent: {},
+  recruitmentDetail_item: {
+    color: '#333',
+    fontWeight: '400',
+    lineHeight: 18,
+    fontSize: 16,
+    marginLeft: 5,
+  },
+});

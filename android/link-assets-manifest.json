@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Poppins-Bold.ttf",
+      "sha1": "b9b65c039a1f10a5cb5e0726c6e7e18e98a8e517"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-Medium.ttf",
+      "sha1": "af7058373acbcf383dd114b8f9bbfb9faafd79eb"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-Regular.ttf",
+      "sha1": "01d319c533f62ea29f03b5df8adfd4d93d2d2a38"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-SemiBold.ttf",
+      "sha1": "20b39c8b480c946b084d6aa09f12bf10b2ec5aa6"
+    },
+    {
+      "path": "src/assets/fonts/Svn-Avo.ttf",
+      "sha1": "12aa79355a25bdd387e117c1e0e088eee0eea029"
+    },
+    {
+      "path": "src/assets/fonts/Svn-Bold.ttf",
+      "sha1": "625c8c2f289fe7a99a4eaebb20640fbd6ee8b14a"
+    },
+    {
+      "path": "src/assets/fonts/goEdu.ttf",
+      "sha1": "0b0a3cc4ac7e44d6a974c70f9cd39c8d047bf652"
+    },
+    {
+      "path": "src/assets/fonts/icomoon.ttf",
+      "sha1": "79e6af4a676ea5000a16e351f1ae6355493a531c"
+    }
+  ]
+}
