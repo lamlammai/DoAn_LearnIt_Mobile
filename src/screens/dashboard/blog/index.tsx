@@ -147,7 +147,9 @@ export default function BlogScreen({navigation}) {
                       id: blog?.id,
                     })
                   }>
-                  <Text style={styles.blogTitle}>{blog?.title}</Text>
+                  <Text style={styles.blogTitle} numberOfLines={2}>
+                    {blog?.title}
+                  </Text>
                   <Text style={styles.blogTime}>
                     {Helper.formatDate(blog?.createdAt)}
                   </Text>

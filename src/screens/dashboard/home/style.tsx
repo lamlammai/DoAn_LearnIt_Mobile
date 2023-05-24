@@ -15,7 +15,7 @@ export default StyleSheet.create({
     paddingHorizontal: 15,
   },
   carousel: {
-    width: Dimens.DEVICE_WIDTH,
+    width: '100%',
     resizeMode: 'cover',
     height: 200,
     flex: 1,
@@ -30,9 +30,9 @@ export default StyleSheet.create({
     marginHorizontal: 'auto',
     maxWidth: '100%',
     color: '#ffffff',
-    fontSize: 27,
-    lineHeight: 27,
-    marginBottom: 10,
+    fontSize: getSize.m(27),
+    lineHeight: getSize.m(27),
+    marginBottom: getSize.m(10),
   },
   carouselSubTitle: {
     color: '#ffffff',
@@ -128,7 +128,7 @@ export default StyleSheet.create({
     marginRight: getSize.m(4),
   },
   imgItem: {
-    width: 200,
+    width: Dimens.DEVICE_WIDTH - 130,
     height: 150,
     borderRadius: 10,
     overflow: 'hidden',
@@ -141,7 +141,7 @@ export default StyleSheet.create({
   learningItem: {
     marginHorizontal: 10,
     flex: 1,
-    width: 200,
+    width: Dimens.DEVICE_WIDTH - 130,
   },
   learningNumber: {
     color: '#82919b',

@@ -160,7 +160,7 @@ const HomeScreen = ({navigation}) => {
                             source={{uri: item?.course?.img}}
                           />
                         </Block>
-                        <Text style={styles.learningText}>
+                        <Text style={styles.learningText} numberOfLines={2}>
                           {item?.course?.name}
                         </Text>
                       </Block>
@@ -237,7 +237,9 @@ const HomeScreen = ({navigation}) => {
                         {/* <Image style={styles.img} source={item?.img} /> */}
                         <Image style={styles.img} source={{uri: item?.img}} />
                       </Block>
-                      <Text style={styles.learningText}>{item?.name}</Text>
+                      <Text style={styles.learningText} numberOfLines={2}>
+                        {item?.name}
+                      </Text>
                       <Block style={styles.learningPrice}>
                         <Text style={styles.learningTextPriceKm}>
                           {item?.price} xu
@@ -278,7 +280,9 @@ const HomeScreen = ({navigation}) => {
                         {/* <Image style={styles.img} source={item?.img} /> */}
                         <Image style={styles.img} source={{uri: item?.img}} />
                       </Block>
-                      <Text style={styles.learningText}>{item?.name}</Text>
+                      <Text style={styles.learningText} numberOfLines={2}>
+                        {item?.name}
+                      </Text>
                       <Block style={styles.learningPrice}>
                         <Icon
                           name={'people'}

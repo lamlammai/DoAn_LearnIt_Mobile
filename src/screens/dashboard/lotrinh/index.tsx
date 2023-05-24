@@ -85,7 +85,9 @@ export default function LotrinhScreen({navigation}) {
                       <Text style={styles.learningPathItem_title}>
                         {item.title}
                       </Text>
-                      <Text style={styles.learningPathItem_desc}>
+                      <Text
+                        style={styles.learningPathItem_desc}
+                        numberOfLines={4}>
                         {item.desc}
                       </Text>
                     </TouchableOpacity>

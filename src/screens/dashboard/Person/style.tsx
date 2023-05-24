@@ -243,11 +243,17 @@ export default StyleSheet.create({
 
   headerTop: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    right: 10,
+  },
+  headerTopNoti: {
+    right: 10,
   },
   headerBody: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   headerThumb: {
     width: 40,
@@ -257,6 +263,7 @@ export default StyleSheet.create({
   },
   headerInfo: {
     marginLeft: 10,
+    position: 'relative',
   },
   headerSubName: {
     color: '#fff',

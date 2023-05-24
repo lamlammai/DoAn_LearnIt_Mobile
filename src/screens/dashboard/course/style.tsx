@@ -1,3 +1,5 @@
+import Dimens from '@base/common/Dimens';
+import {getSize} from '@base/common/responsive';
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
@@ -75,15 +77,15 @@ export default StyleSheet.create({
     borderBottomColor: '#f13b17',
   },
   mainItem: {
-    marginRight: 10,
+    marginRight: 20,
     flex: 1,
-    width: 200,
+    width: Dimens.DEVICE_WIDTH - 130,
   },
   mainItemDisable: {
     opacity: 0.6,
     marginRight: 10,
     flex: 1,
-    width: 200,
+    width: Dimens.DEVICE_WIDTH - 130,
   },
   itemThumb: {
     width: '100%',
@@ -93,10 +95,10 @@ export default StyleSheet.create({
   },
   itemTitle: {
     color: '#292929',
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 20,
     fontWeight: '600',
-    marginTop: 3,
+    marginTop: getSize.m(6),
     flex: 1,
   },
   suggestionBox_wrapper: {marginTop: 20, marginBottom: 20},

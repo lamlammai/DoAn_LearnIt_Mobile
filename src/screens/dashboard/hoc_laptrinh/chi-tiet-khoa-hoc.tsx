@@ -90,7 +90,7 @@ const DetailCourseScreen = ({navigation, route}) => {
   };
   useEffect(() => {
     getCourse();
-  }, []);
+  }, [id]);
 
   const handleConFirmAdd = () => {
     setConfirm(true);
@@ -154,7 +154,9 @@ const DetailCourseScreen = ({navigation, route}) => {
         <ScrollView
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}>
-          <Text style={styles.courseDetailName}>{dataCourse?.name}</Text>
+          <Text style={styles.courseDetailName} numberOfLines={2}>
+            {dataCourse?.name}
+          </Text>
           <Text style={styles.courseDetail_textContent}>
             {dataCourse?.description}
           </Text>
@@ -174,8 +176,8 @@ const DetailCourseScreen = ({navigation, route}) => {
                   size={getSize.m(24)}
                   color={Color.WHITE}
                 />
-                <Text style={styles.courseDetail_ItemText}>
-                  Trình độ:
+                <Text style={styles.courseDetail_ItemText}>Trình độ: </Text>
+                <Text style={styles.courseDetail_ItemText_strong}>
                   {dataCourse?.level == 0
                     ? 'Cơ bản'
                     : dataCourse?.level == 1
@@ -190,10 +192,9 @@ const DetailCourseScreen = ({navigation, route}) => {
                   size={getSize.m(24)}
                   color={Color.WHITE}
                 />
-                <Text style={styles.courseDetail_ItemText}>
-                  Tổng số
-                  <Text style={styles.courseDetail_ItemTextStrong}>19</Text> bài
-                  học
+                <Text style={styles.courseDetail_ItemText}>Tổng số:</Text>
+                <Text style={styles.courseDetail_ItemText_strong}>
+                  {dataCourse?.lessonList?.length} bài học
                 </Text>
               </Block>
               <Block style={styles.courseDetail_Item}>
@@ -220,7 +221,9 @@ const DetailCourseScreen = ({navigation, route}) => {
                     size={getSize.m(24)}
                     color={Color.RED}
                   />
-                  <Text style={styles.courseDetail_topicList_title}>
+                  <Text
+                    style={styles.courseDetail_topicList_title}
+                    numberOfLines={2}>
                     {element}
                   </Text>
                 </Block>
@@ -235,9 +238,7 @@ const DetailCourseScreen = ({navigation, route}) => {
             </Text>
           </Block>
           <Block style={styles.curriculumOfCourse}>
-            <Text style={styles.curriculumOfCourseTitle}>
-              Nội dung khóa học
-            </Text>
+            <Text style={styles.courseDetailName}>Nội dung khóa học</Text>
             <Block style={styles.curriculumOfCourseInfo}>
               <Text style={styles.curriculumOfCourseValue}>
                 <Text style={styles.curriculumOfCourseStrong}>
@@ -246,9 +247,7 @@ const DetailCourseScreen = ({navigation, route}) => {
                 </Text>
                 bài học
               </Text>
-              <Text style={styles.curriculumOfCourseStrong}>
-                02 giờ 49 phút
-              </Text>
+              <Text style={styles.curriculumOfCourseStrong} />
             </Block>
             <Block style={styles.curriculumOfCourse_panelGroup}>
               {lesson?.map((e, key) => (
@@ -260,18 +259,15 @@ const DetailCourseScreen = ({navigation, route}) => {
                       color={Color.WHITE}
                       style={styles.curriculumOfCourseContentIcon}
                     />
-                    <Text style={styles.curriculumOfCourseContentValue}>
+                    <Text
+                      style={styles.curriculumOfCourseContentValue}
+                      numberOfLines={2}>
                       {key + 1}. {e?.name}
                     </Text>
                   </Block>
-                  <Text style={styles.curriculumOfCourseContentTime}>
-                    20:77
-                  </Text>
+                  <Text style={styles.curriculumOfCourseContentTime} />
                 </Block>
               ))}
-              {/* <SubjectItem />
-              <SubjectItem />
-              <SubjectItem /> */}
             </Block>
           </Block>
           <Block style={styles.courseDetail_topicList}>
@@ -281,11 +277,13 @@ const DetailCourseScreen = ({navigation, route}) => {
                 <Block style={styles.courseDetail_topicList_item} key={key}>
                   <Icon
                     style={styles.courseDetail_topicList_icon}
-                    name={'checkmark-outline'}
+                    name={'pin'}
                     size={getSize.m(24)}
                     color={Color.RED}
                   />
-                  <Text style={styles.courseDetail_topicList_title}>
+                  <Text
+                    style={styles.courseDetail_topicList_title}
+                    numberOfLines={2}>
                     {element}
                   </Text>
                 </Block>
@@ -331,6 +329,7 @@ const DetailCourseScreen = ({navigation, route}) => {
                 ))
               : ''}
           </Block>
+          <Block style={styles.courseBottom} />
         </ScrollView>
       </Block>
       <Block style={styles.button_bottom}>

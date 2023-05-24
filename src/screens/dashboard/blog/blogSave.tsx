@@ -10,6 +10,7 @@ import UserService from 'domain/user.service';
 import {setLoading} from '@redux/slices/appSlice';
 import Helper from '@base/utils/helper';
 import {Images} from '@assets/images';
+import {BLOG_DETAIL_SCREEN} from 'navigation/screen';
 
 const BlogSaveScreen = ({navigation}) => {
   const [active, setActive] = useState(1);
@@ -87,22 +88,29 @@ const BlogSaveScreen = ({navigation}) => {
               {listBlog?.length > 0 ? (
                 listBlog?.map((item: any, key: number) => (
                   <Block style={styles.blogcontentItem} key={key}>
-                    <Text style={styles.blogcontentItem_title}>
-                      {item?.title}
-                    </Text>
-                    <Block style={styles.blogcontentItem_author}>
-                      <Text style={styles.blogcontentItem_time}>
-                        {Helper.formatDate(item?.createdAt)}
+                    <TouchableOpacity
+                      onPress={() =>
+                        navigation.navigate(BLOG_DETAIL_SCREEN, {
+                          id: item?.id,
+                        })
+                      }>
+                      <Text style={styles.blogcontentItem_title}>
+                        {item?.title}
                       </Text>
-                      <Block style={styles.blogcontentItem_group}>
-                        <Text style={styles.blogcontentItem_name}>
-                          Tác giả:
+                      <Block style={styles.blogcontentItem_author}>
+                        <Text style={styles.blogcontentItem_time}>
+                          {Helper.formatDate(item?.createdAt)}
                         </Text>
-                        <Text style={styles.blogcontentItem_strong}>
-                          {item?.author?.username}
-                        </Text>
+                        <Block style={styles.blogcontentItem_group}>
+                          <Text style={styles.blogcontentItem_name}>
+                            Tác giả:
+                          </Text>
+                          <Text style={styles.blogcontentItem_strong}>
+                            {item?.author?.username}
+                          </Text>
+                        </Block>
                       </Block>
-                    </Block>
+                    </TouchableOpacity>
                   </Block>
                 ))
               ) : (

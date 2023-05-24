@@ -46,24 +46,6 @@ export default function UserScreen({navigation}) {
     <SafeAreaView style={styles.container}>
       <Block style={styles.headerUser}>
         <Block style={styles.content}>
-          <Block style={styles.headerTop}>
-            <TouchableOpacity>
-              <Icon
-                name={'notifications-outline'}
-                size={getSize.m(24)}
-                color={Color.WHITE}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(SETTING_SCREEN)}>
-              <Icon
-                style={styles.iconUser}
-                name={'settings-outline'}
-                size={getSize.m(24)}
-                color={Color.WHITE}
-              />
-            </TouchableOpacity>
-          </Block>
           <TouchableOpacity style={styles.headerBody}>
             <Block style={styles.headerThumb}>
               <Image
@@ -74,6 +56,25 @@ export default function UserScreen({navigation}) {
             <Block style={styles.headerInfo}>
               <Text style={styles.headerName}>{user?.username}</Text>
               <Text style={styles.headerSubName}>{user?.email}</Text>
+            </Block>
+            <Block style={styles.headerTop}>
+              <TouchableOpacity style={styles.headerTopNoti}>
+                <Icon
+                  name={'notifications-outline'}
+                  size={getSize.m(24)}
+                  color={Color.WHITE}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.headerTopSetting}
+                onPress={() => navigation.navigate(SETTING_SCREEN)}>
+                <Icon
+                  style={styles.iconUser}
+                  name={'settings-outline'}
+                  size={getSize.m(24)}
+                  color={Color.WHITE}
+                />
+              </TouchableOpacity>
             </Block>
           </TouchableOpacity>
         </Block>

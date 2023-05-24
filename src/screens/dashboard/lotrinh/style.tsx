@@ -1,3 +1,4 @@
+import Dimens from '@base/common/Dimens';
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
@@ -21,7 +22,7 @@ export default StyleSheet.create({
     color: '#fff',
     paddingHorizontal: 10,
     paddingVertical: 20,
-    paddingTop: 40,
+    paddingTop: 30,
   },
   icon: {
     color: '#fff',
@@ -38,8 +39,8 @@ export default StyleSheet.create({
   },
   desc: {
     color: '#292929',
-    fontSize: 15,
-    lineHeight: 16,
+    fontSize: 16,
+    lineHeight: 20,
     marginVertical: 20,
   },
   containerBody: {},
@@ -65,8 +66,8 @@ export default StyleSheet.create({
     paddingBottom: 14,
   },
   learningPathItem_desc: {
-    fontSize: 14,
-    lineHeight: 16,
+    fontSize: 15,
+    lineHeight: 20,
     margin: 0,
   },
   btnBox: {
@@ -75,33 +76,37 @@ export default StyleSheet.create({
     borderColor: '#f05123',
     borderRadius: 9999,
     fontWeight: '600',
-    paddingHorizontal: 16,
+    paddingHorizontal: 30,
     paddingVertical: 9,
     textAlign: 'center',
     marginTop: 20,
+    width: Dimens.DEVICE_WIDTH * 0.6,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 'auto',
   },
   btnText: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
   },
 
   btnBoxNormal: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f05123',
     borderWidth: 2,
-    borderColor: '#292929',
+    borderColor: '#f05123',
     borderRadius: 9999,
     fontWeight: '600',
-    paddingHorizontal: 16,
-    paddingVertical: 9,
+    paddingVertical: 15,
     textAlign: 'center',
+    alignItems: 'center',
     marginTop: 15,
   },
   btnTextNormal: {
-    color: '#292929',
-    fontSize: 14,
-    fontWeight: '600',
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
     textAlign: 'center',
   },
   suggestionBox: {
@@ -118,8 +123,8 @@ export default StyleSheet.create({
     marginVertical: 10,
   },
   pathDetail_heading: {
-    color: '#242424',
-    fontSize: 22,
+    color: '#EE3F19',
+    fontSize: 25,
     fontWeight: '700',
     marginVertical: 15,
   },
@@ -127,7 +132,7 @@ export default StyleSheet.create({
   pathDetail_des: {
     color: '#292929',
     fontSize: 16,
-    lineHeight: 20,
+    lineHeight: 25,
     marginVertical: 7,
   },
   pathDetail_quote: {
@@ -135,10 +140,13 @@ export default StyleSheet.create({
     borderColor: '#f05123',
     color: '#757575',
     marginLeft: 0,
+    fontStyle: 'italic',
+    fontSize: 18,
+    lineHeight: 25,
     paddingHorizontal: 20,
   },
   pathDetailGroup: {
-    marginTop: 20,
+    marginTop: 10,
   },
   pathDetailGroupBody: {
     marginTop: 15,
@@ -154,7 +162,7 @@ export default StyleSheet.create({
     marginTop: 5,
   },
   pathDetailGroupItem: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: '#e8e8e8',
     borderRadius: 16,
     marginVertical: 7,
@@ -171,22 +179,25 @@ export default StyleSheet.create({
     marginTop: 8,
   },
   pathDetailInfotitle: {
-    fontSize: 16,
+    fontSize: 18,
+    color: '#706E6E',
     fontWeight: '700',
     margin: 0,
   },
   pathDetailInfoPrice: {
     color: '#f05123',
-    fontSize: 14,
-    fontWeight: '600',
+    fontSize: 25,
+    fontWeight: '800',
     marginTop: 4,
+    marginHorizontal: 5,
+    marginVertical: 5,
   },
   pathDetailInfoDesc: {
     wordWrap: 'break-word',
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: 2,
-    fontSize: 14,
-    lineHeight: 14,
+    fontSize: 15,
+    lineHeight: 18,
     marginBottom: 8,
     marginTop: 8,
     overflow: 'hidden',

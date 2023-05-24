@@ -35,7 +35,7 @@ const exampleItems = [
   },
   {
     title: 'Khóa học HTML CSS Pro',
-    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.',
+    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. ',
     img: Images.BG5,
   },
 ];
@@ -51,8 +51,10 @@ const CustomCarousel = () => {
     ({item, index}) => (
       <ImageBackground style={styles.carousel} source={item.img} key={index}>
         <Block style={styles.carouselText}>
-          <Text style={styles.carouselTitle}>{item.title}</Text>
-          <Text style={styles.carouselSubTitle} numberOfLines={3}>
+          <Text style={styles.carouselTitle} numberOfLines={1}>
+            {item.title}
+          </Text>
+          <Text style={styles.carouselSubTitle} numberOfLines={2}>
             {item.text}
           </Text>
           <TouchableOpacity style={styles.carouselButton}>

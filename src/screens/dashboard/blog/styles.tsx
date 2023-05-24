@@ -10,7 +10,7 @@ export default StyleSheet.create({
     fontFamily:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
     lineHeight: 15,
-    paddingBottom: 30,
+    // paddingBottom: 30,
   },
   content: {
     paddingHorizontal: 15,
@@ -41,8 +41,7 @@ export default StyleSheet.create({
   },
   main: {
     marginBottom: 20,
-    // height: Dimens.DEVICE_HEIGHT,
-    flex: 1,
+    // flex: 1,
   },
   mainTopic: {
     marginBottom: 20,
@@ -54,19 +53,21 @@ export default StyleSheet.create({
     lineHeight: 18,
     textTransform: 'uppercase',
     marginTop: 10,
+    marginBottom: 10,
   },
-  mainTitle: {color: '#242424', fontSize: 28, fontWeight: '900', marginTop: 10},
+  mainTitle: {color: '#6F6E6E', fontSize: 28, fontWeight: '900', marginTop: 10},
   mainList: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     fontSize: 14,
     paddingLeft: 0,
+    color: '#444444',
   },
   mainItemText: {
     backgroundColor: '#f2f2f2',
     borderRadius: 20,
-    color: '#333',
+    color: '#6C6C6C',
     fontWeight: '500',
     lineHeight: 18,
     marginHorizontal: 3,
@@ -132,11 +133,11 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   blogTitle: {
-    color: '#292929',
-    fontSize: 14,
-    fontWeight: '700',
-    lineHeight: 16,
-    marginBottom: 0,
+    color: '#E03723',
+    fontSize: 16,
+    fontWeight: '600',
+    lineHeight: 24,
+    marginBottom: 5,
   },
   blogDes: {},
   headerContainer: {
@@ -152,6 +153,10 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 20,
   },
+  blogListScroll: {
+    marginTop: 10,
+  },
+
   avatarContainer: {
     width: 50,
     height: 50,
@@ -175,6 +180,8 @@ export default StyleSheet.create({
   },
   heading: {
     fontSize: 24,
+    lineHeight: 30,
+    color: '#6C6C6C',
     fontWeight: 'bold',
   },
   actionsIcon: {
@@ -182,7 +189,11 @@ export default StyleSheet.create({
     position: 'relative',
   },
   mainText: {},
-  reaction_wrapper: {flexDirection: 'row'},
+  reaction_wrapper: {
+    flexDirection: 'row',
+    height: 50,
+    paddingVertical: 10,
+  },
   reaction_item: {
     flexDirection: 'row',
     marginRight: 10,
@@ -196,18 +207,23 @@ export default StyleSheet.create({
     padding: 5,
   },
   reaction_icon: {
-    color: '#757575',
-    fontSize: 16,
+    color: '#DF2D2D',
+    fontSize: 20,
   },
   reaction_icon_report: {
     color: '#fff',
     fontSize: 16,
     marginLeft: 5,
   },
-  reaction_text: {},
+  reaction_text: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#DF2D2D',
+  },
   modalContent: {
     backgroundColor: 'white',
     padding: 20,
+    fontSize: 16,
     borderRadius: 14,
     width: '100%',
   },

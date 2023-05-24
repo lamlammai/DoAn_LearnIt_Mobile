@@ -85,83 +85,88 @@ export default function BlogDetailScreen({navigation, route}) {
       </Block>
       <Block style={styles.content}>
         <Text style={styles.heading}>{detailBlog?.title}</Text>
-        <Block style={styles.userContainer}>
-          <Block style={styles.userContainerLeft}>
-            <TouchableOpacity onPress={() => {}}>
-              <Block style={styles.avatarContainer}>
-                <Image
-                  source={{uri: detailBlog?.image}}
-                  style={styles.avatarImage}
-                />
-              </Block>
-            </TouchableOpacity>
-            <Block style={styles.infoContainer}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+          style={styles.blogListScroll}>
+          <Block style={styles.userContainer}>
+            <Block style={styles.userContainerLeft}>
               <TouchableOpacity onPress={() => {}}>
-                <Text style={styles.nameText}>
-                  {detailBlog?.author?.username}
-                </Text>
+                <Block style={styles.avatarContainer}>
+                  <Image
+                    source={{uri: detailBlog?.image}}
+                    style={styles.avatarImage}
+                  />
+                </Block>
               </TouchableOpacity>
-              <Text style={styles.timeText}>
-                {detailBlog?.createdAt
-                  ? Helper.formatDate(detailBlog?.createdAt)
-                  : ''}
-              </Text>
+              <Block style={styles.infoContainer}>
+                <TouchableOpacity onPress={() => {}}>
+                  <Text style={styles.nameText}>
+                    {detailBlog?.author?.username}
+                  </Text>
+                </TouchableOpacity>
+                <Text style={styles.timeText}>
+                  {detailBlog?.createdAt
+                    ? Helper.formatDate(detailBlog?.createdAt)
+                    : ''}
+                </Text>
+              </Block>
+            </Block>
+
+            <Block style={styles.actionsContainer}>
+              <TouchableOpacity onPress={onPressBookmark}>
+                <Icon
+                  name={'bookmark-outline'}
+                  size={getSize.m(24)}
+                  style={styles.actionsIcon}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={onPressEllipsis}>
+                <Icon
+                  name={'ellipsis-vertical'}
+                  size={getSize.m(24)}
+                  style={styles.actionsIcon}
+                />
+              </TouchableOpacity>
+              {show && (
+                <Block style={styles.tippy_module}>
+                  <TouchableOpacity
+                    onPress={() => {}}
+                    style={styles.tippy_item}>
+                    <Icon
+                      name={'logo-facebook'}
+                      size={getSize.m(24)}
+                      style={styles.tippy_icon}
+                    />
+                    <Text style={styles.tippy_text}>Chia sẻ lên Facebook</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {}}
+                    style={styles.tippy_item}>
+                    <Icon
+                      name={'copy-outline'}
+                      size={getSize.m(24)}
+                      style={styles.tippy_icon}
+                    />
+                    <Text style={styles.tippy_text}>Copy link</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                      setVisibleReport(true);
+                    }}
+                    style={styles.tippy_item}>
+                    <Icon
+                      name={'golf-outline'}
+                      size={getSize.m(24)}
+                      style={styles.tippy_icon}
+                    />
+                    <Text style={styles.tippy_text}>Báo cáo bài viết</Text>
+                  </TouchableOpacity>
+                </Block>
+              )}
             </Block>
           </Block>
-
-          <Block style={styles.actionsContainer}>
-            <TouchableOpacity onPress={onPressBookmark}>
-              <Icon
-                name={'bookmark-outline'}
-                size={getSize.m(24)}
-                style={styles.actionsIcon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={onPressEllipsis}>
-              <Icon
-                name={'ellipsis-vertical'}
-                size={getSize.m(24)}
-                style={styles.actionsIcon}
-              />
-            </TouchableOpacity>
-            {show && (
-              <Block style={styles.tippy_module}>
-                <TouchableOpacity onPress={() => {}} style={styles.tippy_item}>
-                  <Icon
-                    name={'logo-facebook'}
-                    size={getSize.m(24)}
-                    style={styles.tippy_icon}
-                  />
-                  <Text style={styles.tippy_text}>Chia sẻ lên Facebook</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => {}} style={styles.tippy_item}>
-                  <Icon
-                    name={'copy-outline'}
-                    size={getSize.m(24)}
-                    style={styles.tippy_icon}
-                  />
-                  <Text style={styles.tippy_text}>Copy link</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => {
-                    setVisibleReport(true);
-                  }}
-                  style={styles.tippy_item}>
-                  <Icon
-                    name={'golf-outline'}
-                    size={getSize.m(24)}
-                    style={styles.tippy_icon}
-                  />
-                  <Text style={styles.tippy_text}>Báo cáo bài viết</Text>
-                </TouchableOpacity>
-              </Block>
-            )}
-          </Block>
-        </Block>
-        <Block style={styles.main}>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            showsHorizontalScrollIndicator={false}>
+          <Block style={styles.main}>
             <Block style={styles.mainImgDetail}>
               <Image
                 source={{uri: detailBlog?.image}}
@@ -174,17 +179,17 @@ export default function BlogDetailScreen({navigation, route}) {
                 source={{html: detailBlog?.currentContent}}
               />
             )}
-          </ScrollView>
-        </Block>
+          </Block>
+        </ScrollView>
         <Block style={styles.reaction_wrapper}>
-          <TouchableOpacity onPress={onHandleLike} style={styles.reaction_item}>
+          {/* <TouchableOpacity onPress={onHandleLike} style={styles.reaction_item}>
             <Icon
               name={'heart-outline'}
               size={getSize.m(24)}
               style={styles.reaction_icon}
             />
             <Text style={styles.reaction_text}>{like}</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <ModalScreen user={user} id={detailBlog?.id} />
           <ModalReport
             user={user}
@@ -508,11 +513,14 @@ const ModalScreen = ({id}: any) => {
           }}
           style={styles.reaction_item}>
           <Icon
-            name={'chatbubble-outline'}
+            name={'ios-chatbubble-ellipses'}
             size={getSize.m(24)}
             style={styles.reaction_icon}
           />
-          <Text style={styles.reaction_text}> {comments?.length} </Text>
+          <Text style={styles.reaction_text}>
+            {' '}
+            {comments?.length} bình luận
+          </Text>
         </TouchableOpacity>
       </Block>
     </SafeAreaView>

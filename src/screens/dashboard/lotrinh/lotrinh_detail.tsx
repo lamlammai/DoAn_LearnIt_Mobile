@@ -64,15 +64,6 @@ export default function LotrinhDetailScreen({navigation, route}) {
           </Block>
           <Block style={styles.pathDetailGroup}>
             <Block style={styles.pathDetailGroupBody}>
-              {/* <Text style={styles.pathDetailGroup_title}>
-                1. Tìm hiểu về ngành IT
-              </Text>
-              <Text style={styles.pathDetailGroup_desc}>
-                Để theo ngành IT - Phần mềm cần rèn luyện những kỹ năng nào? Bạn
-                đã có sẵn tố chất phù hợp với ngành chưa? Cùng thăm quan các
-                công ty IT và tìm hiểu về văn hóa, tác phong làm việc của ngành
-                này nhé các bạn.
-              </Text> */}
               {dataCourse?.map((item, index) => (
                 <Block style={styles.pathDetailGroupItem} key={index}>
                   <Block style={styles.pathDetailThumb}>
@@ -83,7 +74,7 @@ export default function LotrinhDetailScreen({navigation, route}) {
                     <Text style={styles.pathDetailInfoPrice}>
                       {item?.price == 0 ? 'Miễn phí' : `${item?.price} xu`}
                     </Text>
-                    <Text style={styles.pathDetailInfoDesc}>
+                    <Text style={styles.pathDetailInfoDesc} numberOfLines={3}>
                       {item?.description}
                     </Text>
                   </Block>
