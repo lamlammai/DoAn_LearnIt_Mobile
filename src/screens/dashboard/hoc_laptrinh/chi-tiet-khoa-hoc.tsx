@@ -165,7 +165,7 @@ const DetailCourseScreen = ({navigation, route}) => {
               {dataCourse
                 ? dataCourse?.price == 0
                   ? 'Miễn phí'
-                  : `${dataCourse?.price} xu`
+                  : `${dataCourse?.price ? dataCourse?.price : 0} xu`
                 : ''}
             </Text>
             <Block style={styles.courseDetail_List}>

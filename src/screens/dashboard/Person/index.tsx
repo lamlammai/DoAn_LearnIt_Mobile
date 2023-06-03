@@ -27,9 +27,11 @@ export default function UserScreen({navigation}) {
   const [user, setUser] = React.useState();
   const service = new UserService();
   React.useEffect(() => {
+    console.log('vao');
     const getUser = async () => {
       dispatch(setLoading(true));
       const res = await service.getUser();
+      console.log('res', res);
       if (res?.returnValue?.data) {
         setUser(res?.returnValue?.data);
         dispatch(setLoading(false));

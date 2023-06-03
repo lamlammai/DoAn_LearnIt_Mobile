@@ -360,12 +360,15 @@ export default StyleSheet.create({
     height: Dimens.DEVICE_HEIGHT * 0.45,
     flexDirection: 'column',
     display: 'flex',
+    paddingBottom: 30,
   },
   cmt_item: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: getSize.m(10),
+    paddingBottom: 5,
+    width: '100%',
   },
   cmt_value: {
     color: '#444',
@@ -458,6 +461,8 @@ export default StyleSheet.create({
     width: 40,
     backgroundColor: 'grey',
     borderBottomEndRadius: 10,
+    height: 70,
+    zIndex: 1000,
   },
   commentIcon: {
     margin: 5,

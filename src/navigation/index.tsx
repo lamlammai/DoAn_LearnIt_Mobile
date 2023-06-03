@@ -60,10 +60,12 @@ const Stack = createNativeStackNavigator();
 const RootStack = () => {
   const dispatch = useDispatch();
   // const infoUser = useSelector<IRootState, IUserState>(state => state.infoUser);
+  // console.log('infoUser', infoUser);
+
   const infoUser = {
-    isLogged: true,
+    isLogged: false,
   };
-  // const {firstBoot} = useSelector<IRootState, IAppState>(state => state.app);
+  //const {firstBoot} = useSelector<IRootState, IAppState>(state => state.app);
   const firstBoot = false;
 
   React.useEffect(() => {

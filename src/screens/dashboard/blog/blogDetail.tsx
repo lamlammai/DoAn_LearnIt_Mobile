@@ -414,7 +414,7 @@ const ModalScreen = ({id}: any) => {
                           borderBottomColor: 'rgba(128, 128, 128, 0.2)',
                           borderBottomWidth: 1,
                           paddingBottom: 5,
-                          width: 250,
+                          width: '70%',
                         }}>
                         <Block style={styles.userContainer}>
                           <Text>
@@ -437,22 +437,20 @@ const ModalScreen = ({id}: any) => {
                           )}
                           {show && key === showIndex && (
                             <TouchableOpacity style={styles.commentAction}>
-                              <Text
-                                style={styles.commentIcon}
+                              <TouchableOpacity
                                 onPress={() => {
                                   handleEdit(key);
                                   setShow(false);
                                 }}>
-                                Sửa
-                              </Text>
-                              <Text
+                                <Text style={styles.commentIcon}>Sửa</Text>
+                              </TouchableOpacity>
+                              <TouchableOpacity
                                 onPress={() => {
                                   openModalDelete(c);
                                   setShow(false);
-                                }}
-                                style={styles.commentIcon}>
-                                Xoá
-                              </Text>
+                                }}>
+                                <Text style={styles.commentIcon}>Xoá</Text>
+                              </TouchableOpacity>
                             </TouchableOpacity>
                           )}
                         </Block>

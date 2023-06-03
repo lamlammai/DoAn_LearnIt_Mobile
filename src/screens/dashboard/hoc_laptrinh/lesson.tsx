@@ -20,6 +20,7 @@ import {useDispatch} from 'react-redux';
 import {setLoading} from '@redux/slices/appSlice';
 import ModalError from '@components/ModalError';
 import ModalConfirm from '@components/ModalConfirm';
+import {LEARNING} from 'navigation/screen';
 const LessonScreen = ({navigation, route}) => {
   const {id, lesson} = route.params;
 
@@ -194,7 +195,11 @@ const LessonScreen = ({navigation, route}) => {
         </Text>
 
         <Block>
-          <Text style={styles.noteText}>{`${notes?.length} `}Ghi chú </Text>
+          <Text style={styles.noteText}>
+            {notes?.length
+              ? `${notes?.length} Ghi chú`
+              : 'Không có ghi chú nào'}
+          </Text>
           <ScrollView
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}>
@@ -230,7 +235,7 @@ const LessonScreen = ({navigation, route}) => {
 
       <Block style={styles.actionBar}>
         <Block style={styles.actionBar_toggle_btn}>
-          <ModalScreen data={dataLesson} index={index} />
+          <ModalScreen data={dataLesson} index={index} setId={setIdLession} />
           <Block style={styles.actionBar_group_btn}>
             <TouchableOpacity
               style={
@@ -311,7 +316,7 @@ const LessonScreen = ({navigation, route}) => {
   );
 };
 export default LessonScreen;
-const ModalScreen = ({data, index}) => {
+const ModalScreen = ({data, index, setId}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <SafeAreaView>
@@ -335,29 +340,36 @@ const ModalScreen = ({data, index}) => {
             </Block>
             <Block style={styles.trackItem_steps_list}>
               {data?.map((element, key) => (
-                <Block style={styles.stepItem_List} key={key}>
-                  <Block style={styles.stepItem__info}>
-                    <Text style={styles.stepItem_title}>{element.name}</Text>
-                    <Text style={styles.stepItem__desc}>11:35</Text>
+                <TouchableOpacity
+                  key={key}
+                  onPress={() => {
+                    setId(element?.id);
+                    setShowModal(false);
+                  }}>
+                  <Block style={styles.stepItem_List}>
+                    <Block style={styles.stepItem__info}>
+                      <Text style={styles.stepItem_title}>{element.name}</Text>
+                      {/* <Text style={styles.stepItem__desc}>11:35</Text> */}
+                    </Block>
+                    <Block style={styles.stepItem_icon_box}>
+                      {index >= key ? (
+                        <Icon
+                          name={'checkmark-sharp'}
+                          size={getSize.m(24)}
+                          color="#60EB28"
+                          style={styles.trackItem__icon}
+                        />
+                      ) : (
+                        <Icon
+                          name={'lock-closed-outline'}
+                          size={getSize.m(24)}
+                          color="#60EB28"
+                          style={styles.trackItem__icon}
+                        />
+                      )}
+                    </Block>
                   </Block>
-                  <Block style={styles.stepItem_icon_box}>
-                    {index >= key ? (
-                      <Icon
-                        name={'checkmark-sharp'}
-                        size={getSize.m(24)}
-                        color="#60EB28"
-                        style={styles.trackItem__icon}
-                      />
-                    ) : (
-                      <Icon
-                        name={'lock-closed-outline'}
-                        size={getSize.m(24)}
-                        color="#60EB28"
-                        style={styles.trackItem__icon}
-                      />
-                    )}
-                  </Block>
-                </Block>
+                </TouchableOpacity>
               ))}
             </Block>
             {/* <ModalContent />
@@ -443,6 +455,7 @@ const AddNoteScreen = ({id, getNoteLession}) => {
         if (res?.returnValue?.code === 'NOTE_001') {
           getNoteLession(id);
           setShowNote(!showNote);
+          setText('');
           dispatch(setLoading(false));
         } else {
           Alert.alert(res?.returnValue?.message ?? '');
