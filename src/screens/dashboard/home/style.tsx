@@ -88,7 +88,8 @@ export default StyleSheet.create({
   },
   sectionListTitle: {
     margin: 0,
-    fontSize: 20,
+    fontSize: 24,
+    color: '#f56228',
     fontWeight: '700',
   },
   buttonText: {
@@ -97,6 +98,12 @@ export default StyleSheet.create({
     fontWeight: '600',
     color: '#fa1313',
   },
+  learningPriceGroup: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 10,
+    marginTop: 5,
+  },
   learningPrice: {
     flexDirection: 'row',
   },
@@ -104,7 +111,7 @@ export default StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
     textAlign: 'left',
-    fontWeight: '600',
+    fontWeight: '400',
     margin: 0,
     marginTop: 10,
     overflow: 'hidden',

@@ -41,7 +41,7 @@ const InfomationScreen = ({navigation, route}) => {
               <Text style={styles.boxWrapper__participation_title}>
                 Thành viên của
                 <Text style={styles.boxWrapper___highlight}>
-                  F8 - Học lập trình để đi làm
+                  LEARNIT - Học lập trình để đi làm
                 </Text>
                 từ 8 ngày trước
               </Text>

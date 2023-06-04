@@ -95,9 +95,7 @@ export default function UserScreen({navigation}) {
               </Text>
               <Text style={styles.mainItemTilte}>Đang học</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
+            
           </TouchableOpacity> */}
         </Block>
         <Block style={styles.box1}>
@@ -113,9 +111,6 @@ export default function UserScreen({navigation}) {
               />
               <Text style={styles.mainItemTilte}>Số dư xu</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.mainItem}
@@ -128,9 +123,6 @@ export default function UserScreen({navigation}) {
                 color={Color.WHITE}
               />
               <Text style={styles.mainItemTilte}>Đổi xu</Text>
-            </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
             </Block>
           </TouchableOpacity>
           {/* <TouchableOpacity
@@ -146,9 +138,7 @@ export default function UserScreen({navigation}) {
 
               <Text style={styles.mainItemTilte}>Nạp xu</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
+            
           </TouchableOpacity> */}
         </Block>
         <Block style={styles.box1}>
@@ -164,9 +154,6 @@ export default function UserScreen({navigation}) {
               />
               <Text style={styles.mainItemTilte}>Bài viết của tôi</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
           </TouchableOpacity>
           {/* <TouchableOpacity
             style={styles.mainItem}
@@ -180,9 +167,7 @@ export default function UserScreen({navigation}) {
               />
               <Text style={styles.mainItemTilte}>Bài viết đã lưu</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
+            
           </TouchableOpacity> */}
           <TouchableOpacity
             style={styles.mainItem}
@@ -195,9 +180,6 @@ export default function UserScreen({navigation}) {
                 color={Color.WHITE}
               />
               <Text style={styles.mainItemTilte}>Cơ hội việc làm</Text>
-            </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
             </Block>
           </TouchableOpacity>
           <TouchableOpacity
@@ -212,9 +194,6 @@ export default function UserScreen({navigation}) {
               />
               <Text style={styles.mainItemTilte}>Thiết lập tài khoản</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
           </TouchableOpacity>
           <TouchableOpacity style={styles.mainItem}>
             <Block style={styles.mainItemLeft}>
@@ -226,9 +205,6 @@ export default function UserScreen({navigation}) {
               />
               <Text style={styles.mainItemTilte}>Giới thiệu</Text>
             </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
-            </Block>
           </TouchableOpacity>
           <TouchableOpacity style={styles.mainItem} onPress={handleLogout}>
             <Block style={styles.mainItemLeft}>
@@ -239,9 +215,6 @@ export default function UserScreen({navigation}) {
                 color={Color.WHITE}
               />
               <Text style={styles.mainItemTilte}>Đăng xuất</Text>
-            </Block>
-            <Block style={styles.mainItemRight}>
-              <Text style={styles.iconArr}>{'>'}</Text>
             </Block>
           </TouchableOpacity>
         </Block>

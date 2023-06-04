@@ -38,9 +38,9 @@ export default StyleSheet.create({
     height: '100%',
   },
   desc: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 16,
-    lineHeight: 20,
+    lineHeight: 26,
     marginVertical: 20,
   },
   containerBody: {},
@@ -67,7 +67,7 @@ export default StyleSheet.create({
   },
   learningPathItem_desc: {
     fontSize: 15,
-    lineHeight: 20,
+    lineHeight: 24,
     margin: 0,
   },
   btnBox: {
@@ -111,6 +111,7 @@ export default StyleSheet.create({
   },
   suggestionBox: {
     marginTop: 20,
+    marginBottom: 20,
   },
   suggestionBox_info: {
     fontSize: 24,
@@ -118,8 +119,8 @@ export default StyleSheet.create({
     lineHeight: 32,
   },
   suggestionBox_des: {
-    fontSize: 14,
-    lineHeight: 16,
+    fontSize: 16,
+    lineHeight: 21,
     marginVertical: 10,
   },
   pathDetail_heading: {
@@ -130,7 +131,7 @@ export default StyleSheet.create({
   },
   pathDetail_Desc: {},
   pathDetail_des: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 16,
     lineHeight: 25,
     marginVertical: 7,

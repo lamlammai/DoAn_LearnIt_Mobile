@@ -146,6 +146,27 @@ export default StyleSheet.create({
   inputField_fieldContent: {
     marginTop: 20,
   },
+  button_bottom_box: {
+    paddingVertical: 15,
+    backgroundColor: '#f05123',
+    borderRadius: 999,
+    textAlign: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+  },
+  button_bottom_text: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
   inputField_fieldContentLabel: {
     fontSize: 16,
     fontWeight: '600',
@@ -281,10 +302,11 @@ export default StyleSheet.create({
   },
   mainItemLeft: {
     flexDirection: 'row',
+    paddingVertical: 10,
   },
   mainItemTilte: {
     fontSize: 15,
-    fontWeight: '500',
+    fontWeight: '400',
     color: '#333',
   },
   mainItemRight: {},

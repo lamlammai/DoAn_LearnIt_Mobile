@@ -348,13 +348,13 @@ export default StyleSheet.create({
   },
   notiText: {
     wordWrap: 'break-word',
-    color: '#292929',
+    color: '#474747',
     fontSize: 16,
     lineHeight: 20,
     marginTop: 10,
   },
   noteText: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 17,
     lineHeight: 20,
     marginTop: 10,

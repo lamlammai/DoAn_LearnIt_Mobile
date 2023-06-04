@@ -30,8 +30,8 @@ export default StyleSheet.create({
   },
   headerName: {
     color: '#fff',
-    fontWeight: '600',
-    fontSize: 18,
+    fontWeight: '700',
+    fontSize: 23,
     lineHeight: 24,
   },
   img: {
@@ -39,17 +39,17 @@ export default StyleSheet.create({
     height: '100%',
   },
   des: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 18,
-    lineHeight: 20,
+    lineHeight: 25,
     marginTop: 15,
   },
   mainBody: {
     marginTop: 20,
   },
   mainTitle: {
-    color: '#242424',
-    fontSize: 20,
+    color: '#f56228',
+    fontSize: 22,
     fontWeight: '700',
   },
   mainList: {
@@ -94,7 +94,7 @@ export default StyleSheet.create({
     borderRadius: 8,
   },
   itemTitle: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 18,
     lineHeight: 20,
     fontWeight: '600',
@@ -117,9 +117,9 @@ export default StyleSheet.create({
   },
   suggestionBox_route: {
     borderWidth: 2,
-    borderColor: '#292929',
+    borderColor: '#474747',
     borderRadius: 999,
-    color: '#292929',
+    color: '#474747',
     marginTop: 8,
     paddingHorizontal: 16,
     paddingVertical: 10,

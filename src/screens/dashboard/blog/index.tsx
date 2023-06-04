@@ -2,11 +2,7 @@ import React from 'react';
 import {ScrollView, SafeAreaView, TouchableOpacity, Image} from 'react-native';
 import {Block, Text} from '@components';
 import styles from './styles';
-import {
-  BLOG_DETAIL_SCREEN,
-  THONG_TIN_SCREEN,
-  TOPIC_SCREEN,
-} from 'navigation/screen';
+import {BLOG_DETAIL_SCREEN, TOPIC_SCREEN} from 'navigation/screen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {getSize} from '@base/common/responsive';
 import Color from '@theme/Color';
@@ -118,8 +114,8 @@ export default function BlogScreen({navigation}) {
                   <TouchableOpacity
                     style={styles.blogAuthor}
                     onPress={() =>
-                      navigation.navigate(THONG_TIN_SCREEN, {
-                        id: blog?.author?.id,
+                      navigation.navigate(BLOG_DETAIL_SCREEN, {
+                        id: blog?.id,
                       })
                     }>
                     <Block style={styles.blogAvt}>

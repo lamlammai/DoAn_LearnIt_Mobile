@@ -124,10 +124,10 @@ const HomeScreen = ({navigation}) => {
         showsHorizontalScrollIndicator={false}>
         <CustomCarousel />
         <Block style={styles.content}>
-          <Text style={styles.textIntro}>
+          {/* <Text style={styles.textIntro}>
             145.436+
             <Text style={styles.textIntroNormal}>người khác cũng học</Text>{' '}
-          </Text>
+          </Text> */}
           {dataUser.length > 0 && (
             <Block style={styles.sectionList}>
               <Block style={styles.sectionListTab}>
@@ -240,10 +240,29 @@ const HomeScreen = ({navigation}) => {
                       <Text style={styles.learningText} numberOfLines={2}>
                         {item?.name}
                       </Text>
-                      <Block style={styles.learningPrice}>
-                        <Text style={styles.learningTextPriceKm}>
-                          {item?.price} xu
-                        </Text>
+                      <Block style={styles.learningPriceGroup}>
+                        <Block style={styles.learningPrice}>
+                          <Icon
+                            name={'pricetags'}
+                            size={getSize.m(18)}
+                            color="#f05123"
+                            style={styles.learningIcon}
+                          />
+                          <Text style={styles.learningTextPriceKm}>
+                            {item?.price} xu
+                          </Text>
+                        </Block>
+                        <Block style={styles.learningPrice}>
+                          <Icon
+                            name={'people'}
+                            size={getSize.m(18)}
+                            color="#f05123"
+                            style={styles.learningIcon}
+                          />
+                          <Text style={styles.learningTextPriceKm}>
+                            {item?.numberOfMember ? item?.numberOfMember : 0}
+                          </Text>
+                        </Block>
                       </Block>
                     </Block>
                   </TouchableOpacity>
@@ -253,7 +272,7 @@ const HomeScreen = ({navigation}) => {
           </Block>
           <Block style={styles.sectionList}>
             <Block style={styles.sectionListTab}>
-              <Text style={styles.sectionListTitle}>Khóa học miến phí</Text>
+              <Text style={styles.sectionListTitle}>Khóa học miễn phí</Text>
               <TouchableOpacity
                 style={styles.buttonText}
                 onPress={() => {
@@ -287,11 +306,11 @@ const HomeScreen = ({navigation}) => {
                         <Icon
                           name={'people'}
                           size={getSize.m(18)}
-                          color="#ccc"
+                          color="#f05123"
                           style={styles.learningIcon}
                         />
                         <Text style={styles.learningTextPriceKm}>
-                          {item?.totalUsers ? item?.totalUsers : 0}
+                          {item?.numberOfMember ? item?.numberOfMember : 0}
                         </Text>
                       </Block>
                     </Block>
@@ -316,33 +335,37 @@ const HomeScreen = ({navigation}) => {
               showsVerticalScrollIndicator={false}
               showsHorizontalScrollIndicator={false}>
               <Block style={styles.sectionListMain}>
-                {blogs?.map((item, index) => (
-                  <TouchableOpacity
-                    onPress={() =>
-                      navigation.navigate(BLOG_DETAIL_SCREEN, {
-                        id: item?.id,
-                      })
-                    }
-                    key={index}>
-                    <Block style={styles.learningItem}>
-                      <Block style={styles.imgItem}>
-                        <Image style={styles.img} source={{uri: item?.image}} />
-                      </Block>
-                      <Text style={styles.learningText} numberOfLines={1}>
-                        {item?.title}
-                      </Text>
-                      <Block style={styles.sectionInfo}>
-                        <Image style={styles.imgAvt} source={Images.LOGO} />
-                        <Text style={styles.infoName}>
-                          {item?.author?.username}
+                {blogs.length > 0 &&
+                  blogs?.slice(0, 4)?.map((item, index) => (
+                    <TouchableOpacity
+                      onPress={() =>
+                        navigation.navigate(BLOG_DETAIL_SCREEN, {
+                          id: item?.id,
+                        })
+                      }
+                      key={index}>
+                      <Block style={styles.learningItem}>
+                        <Block style={styles.imgItem}>
+                          <Image
+                            style={styles.img}
+                            source={{uri: item?.image}}
+                          />
+                        </Block>
+                        <Text style={styles.learningText} numberOfLines={1}>
+                          {item?.title}
                         </Text>
-                        <Text style={styles.infoName}>
-                          {formatterDate.format(Date.parse(item?.createdAt))}
-                        </Text>
+                        <Block style={styles.sectionInfo}>
+                          <Image style={styles.imgAvt} source={Images.LOGO} />
+                          <Text style={styles.infoName}>
+                            {item?.author?.username}
+                          </Text>
+                          <Text style={styles.infoName}>
+                            {formatterDate.format(Date.parse(item?.createdAt))}
+                          </Text>
+                        </Block>
                       </Block>
-                    </Block>
-                  </TouchableOpacity>
-                ))}
+                    </TouchableOpacity>
+                  ))}
               </Block>
             </ScrollView>
           </Block>

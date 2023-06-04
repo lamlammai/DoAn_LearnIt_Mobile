@@ -16,6 +16,7 @@ import styles from './register.style';
 import Color from '@theme/Color';
 import InputComponent from '../components/InputComponent';
 import {log} from 'react-native-reanimated';
+import {notifyInvalid} from '@base/utils/Utils';
 
 const defaultRegister = {
   username: '',
@@ -59,16 +60,15 @@ const RegisterScreen = ({navigation}) => {
       });
       setLoading(true);
       const {data} = await authService.registerAccount(dataSignUp);
-
+      console.log('data', data);
       if (data.statusCode !== 200) {
+        setLoading(false);
+        navigation.popToTop();
+        navigation.navigate(SIGN_UP_SUCCESS_SCREEN);
         throw data.data.message;
-        // throw data.description;
       }
-
-      setLoading(false);
-      navigation.popToTop();
-      navigation.navigate(SIGN_UP_SUCCESS_SCREEN);
     } catch (err) {
+      notifyInvalid('Có lỗi xảy ra');
       setLoading(false);
       setError(`${err}`);
     }

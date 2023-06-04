@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import {Block, Text} from '@components';
 import styles from './style';
+import {launchImageLibrary} from 'react-native-image-picker';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {getSize} from '@base/common/responsive';
@@ -12,19 +13,62 @@ import {setLoading} from '@redux/slices/appSlice';
 import {Images} from '@assets/images';
 const SettingScreen = ({navigation}) => {
   const distpatch = useDispatch();
+
+  const CLOUDINARY_CLOUD_NAME = 'ahiho';
+  const CLOUDINARY_UPLOAD_PRESET = 'ahiho_prs';
   const service = new UserService();
+  const [avatar, setAvatar] = useState(Images.LOGO);
+  const [name, setName] = useState('');
 
   const [user, setUser] = React.useState();
-  React.useEffect(() => {
-    const getUser = async () => {
-      distpatch(setLoading(true));
-      const res = await service.getUser();
-      if (res) {
-        setUser(res?.returnValue?.data);
-      }
-      distpatch(setLoading(false));
-    };
+  const makeUploadFormData = photo => {
+    const data = new FormData();
+    data.append('file', `data:image/jpeg;base64,${photo.assets[0].base64}`);
+    data.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    data.append('cloud_name', CLOUDINARY_CLOUD_NAME);
 
+    return data;
+  };
+
+  const pickImageWithGallery = async () => {
+    try {
+      const result = await launchImageLibrary({
+        mediaType: 'photo',
+        quality: 1,
+        includeBase64: true,
+      });
+      const data = makeUploadFormData(result);
+      const {secure_url} = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`,
+        {
+          method: 'post',
+          body: data,
+        },
+      )
+        .then(res => res.json())
+        .catch(e => console.log(e));
+      setAvatar(secure_url);
+    } catch (error) {}
+  };
+  const updateInfo = async () => {
+    distpatch(setLoading(true));
+    const res = await service.updateInfo();
+    if (res) {
+      await getUser();
+    }
+    distpatch(setLoading(false));
+  };
+  const getUser = async () => {
+    distpatch(setLoading(true));
+    const res = await service.getUser();
+    if (res) {
+      setUser(res?.returnValue?.data);
+      setAvatar(res?.returnValue?.data?.avatar);
+      setName(res?.returnValue?.data?.username);
+    }
+    distpatch(setLoading(false));
+  };
+  React.useEffect(() => {
     getUser();
   }, []);
   return (
@@ -48,12 +92,14 @@ const SettingScreen = ({navigation}) => {
           <Block style={styles.inputField_fieldContent}>
             <Text style={styles.inputField_fieldContentLabel}>Avatar</Text>
             <Block style={styles.inputField_fieldContentEditAvt}>
-              <Block style={styles.inputField_fallbackAvatar_avatar}>
+              <TouchableOpacity
+                onPress={pickImageWithGallery}
+                style={styles.inputField_fallbackAvatar_avatar}>
                 <Image
                   source={user?.avatar ? {uri: user?.avatar} : Images.LOGO}
                   style={styles.img}
                 />
-              </Block>
+              </TouchableOpacity>
               <Text style={styles.inputField_description}>
                 Nên là ảnh vuông, chấp nhận các tệp: JPG, PNG hoặc GIF.
               </Text>
@@ -69,7 +115,8 @@ const SettingScreen = ({navigation}) => {
                 maxLength={40}
                 style={styles.inputField_fieldContentInput}
                 placeholder="Thêm tên của bạn"
-                value={user?.username}
+                onChangeText={setName}
+                value={name}
               />
               <Text style={styles.inputField_description}>
                 Tên của bạn xuất hiện trên trang cá nhân và bên cạnh các bình
@@ -126,6 +173,13 @@ const SettingScreen = ({navigation}) => {
                 Điện thoại liên kết với LEARNIT.
               </Text>
             </Block>
+          </Block>
+          <Block style={styles.inputField_fieldContent}>
+            <TouchableOpacity
+              style={styles.button_bottom_box}
+              onPress={() => updateInfo()}>
+              <Text style={styles.button_bottom_text}>Lưu thông tin</Text>
+            </TouchableOpacity>
           </Block>
         </ScrollView>
       </Block>

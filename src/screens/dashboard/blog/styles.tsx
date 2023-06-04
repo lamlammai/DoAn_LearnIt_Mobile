@@ -110,7 +110,7 @@ export default StyleSheet.create({
   },
   blogName: {
     marginLeft: 8,
-    color: '#292929',
+    color: '#474747',
     fontSize: 12,
     fontWeight: '600',
   },
@@ -170,7 +170,7 @@ export default StyleSheet.create({
   },
 
   infoContainer: {},
-  nameText: {color: '#292929', fontSize: 16, fontWeight: '600', margin: 0},
+  nameText: {color: '#474747', fontSize: 16, fontWeight: '600', margin: 0},
   timeText: {color: '#757575', margin: 0},
   actionsContainer: {
     flexDirection: 'row',
@@ -228,15 +228,15 @@ export default StyleSheet.create({
     width: '100%',
   },
   containerModal: {
-    flex: 1,
-    borderRadius: 15,
+    borderRadius: 0,
   },
   modal: {
     flex: 1,
     backgroundColor: '#0000004a',
     padding: 20,
+    height: Dimens.DEVICE_HEIGHT,
     paddingTop: 100,
-    borderRadius: 15,
+    borderRadius: 0,
   },
   modal_endow: {
     // textAlign: 'center',
@@ -458,7 +458,7 @@ export default StyleSheet.create({
     position: 'absolute',
     right: 20,
     top: 0,
-    width: 40,
+    width: 60,
     backgroundColor: 'grey',
     borderBottomEndRadius: 10,
     height: 70,

@@ -13,7 +13,7 @@ export default function LotrinhScreen({navigation}) {
       title: 'Lộ trình học Front-end',
       detail:
         ' Hầu hết các websites hoặc ứng dụng di động đều có 2 phần là  Front-end và Back-end. Front-end là phần giao diện người dùng nhìn thấy và có thể tương tác, đó chính là các ứng dụng mobile hay những website bạn đã từng sử dụng. Vì vậy, nhiệm vụ của lập trình viên Front-end là xây dựng các giao diện đẹp, dễ sử dụng và tối ưu trải nghiệm người dùng.',
-      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này F8 sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
+      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này LEARNIT sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
     },
     {
       path: 'BACKEND',
@@ -27,21 +27,21 @@ export default function LotrinhScreen({navigation}) {
       title: 'Lộ trình học Mobile App',
       detail:
         ' Hầu hết các websites hoặc ứng dụng di động đều có 2 phần là  Front-end và Back-end. Front-end là phần giao diện người dùng nhìn thấy và có thể tương tác, đó chính là các ứng dụng mobile hay những website bạn đã từng sử dụng. Vì vậy, nhiệm vụ của lập trình viên Front-end là xây dựng các giao diện đẹp, dễ sử dụng và tối ưu trải nghiệm người dùng.',
-      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này F8 sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
+      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này LEARNIT sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
     },
     {
       path: 'BASIC',
       title: 'Lộ trình học cho người mới',
       detail:
         ' Hầu hết các websites hoặc ứng dụng di động đều có 2 phần là  Front-end và Back-end. Front-end là phần giao diện người dùng nhìn thấy và có thể tương tác, đó chính là các ứng dụng mobile hay những website bạn đã từng sử dụng. Vì vậy, nhiệm vụ của lập trình viên Front-end là xây dựng các giao diện đẹp, dễ sử dụng và tối ưu trải nghiệm người dùng.',
-      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này F8 sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
+      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này LEARNIT sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
     },
     {
       path: 'OTHER',
       title: 'Lộ trình học khác',
       detail:
         'Hầu hết các websites hoặc ứng dụng di động đều có 2 phần là  Front-end và Back-end. Front-end là phần giao diện người dùng nhìn thấy và có thể tương tác, đó chính là các ứng dụng mobile hay những website bạn đã từng sử dụng. Vì vậy, nhiệm vụ của lập trình viên Front-end là xây dựng các giao diện đẹp, dễ sử dụng và tối ưu trải nghiệm người dùng.',
-      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này F8 sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
+      desc: 'Lập trình viên Front-end là người xây dựng ra giao diện websites. Trong phần này LEARNIT sẽ chia sẻ cho bạn lộ trình để trở thành lập trình viên Front-end nhé.',
     },
   ];
   return (
@@ -57,7 +57,7 @@ export default function LotrinhScreen({navigation}) {
         <Text style={styles.headerName}>Lộ trình học</Text>
         <Text style={styles.icon} />
       </Block>
-      <Block style={styles.content}>
+      <ScrollView style={styles.content}>
         <Text style={styles.desc}>
           Để bắt đầu một cách thuận lợi, bạn nên tập trung vào một lộ trình học.
           Ví dụ: Để đi làm với vị trí "Lập trình viên Front-end" bạn nên tập
@@ -87,7 +87,7 @@ export default function LotrinhScreen({navigation}) {
                       </Text>
                       <Text
                         style={styles.learningPathItem_desc}
-                        numberOfLines={4}>
+                        numberOfLines={3}>
                         {item.desc}
                       </Text>
                     </TouchableOpacity>
@@ -107,7 +107,7 @@ export default function LotrinhScreen({navigation}) {
           </ScrollView>
           <Block style={styles.suggestionBox}>
             <Text style={styles.suggestionBox_info}>
-              Tham gia cộng đồng học viên F8 trên Facebook
+              Tham gia cộng đồng học trên Facebook
             </Text>
             <Text style={styles.suggestionBox_des}>
               Hàng nghìn người khác đang học lộ trình giống như bạn. Hãy tham
@@ -118,7 +118,7 @@ export default function LotrinhScreen({navigation}) {
             </TouchableOpacity>
           </Block>
         </Block>
-      </Block>
+      </ScrollView>
     </SafeAreaView>
   );
 }

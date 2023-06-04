@@ -114,13 +114,13 @@ export default function BlogDetailScreen({navigation, route}) {
             </Block>
 
             <Block style={styles.actionsContainer}>
-              <TouchableOpacity onPress={onPressBookmark}>
+              {/* <TouchableOpacity onPress={onPressBookmark}>
                 <Icon
                   name={'bookmark-outline'}
                   size={getSize.m(24)}
                   style={styles.actionsIcon}
                 />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
               <TouchableOpacity onPress={onPressEllipsis}>
                 <Icon
                   name={'ellipsis-vertical'}
@@ -130,7 +130,7 @@ export default function BlogDetailScreen({navigation, route}) {
               </TouchableOpacity>
               {show && (
                 <Block style={styles.tippy_module}>
-                  <TouchableOpacity
+                  {/* <TouchableOpacity
                     onPress={() => {}}
                     style={styles.tippy_item}>
                     <Icon
@@ -149,7 +149,7 @@ export default function BlogDetailScreen({navigation, route}) {
                       style={styles.tippy_icon}
                     />
                     <Text style={styles.tippy_text}>Copy link</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
                   <TouchableOpacity
                     onPress={() => {
                       setVisibleReport(true);
@@ -341,7 +341,7 @@ const ModalScreen = ({id}: any) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <Block style={styles.containerModal}>
         <Modal animationType={'slide'} transparent={true} visible={showModal}>
           <Block style={styles.modal}>
@@ -414,7 +414,7 @@ const ModalScreen = ({id}: any) => {
                           borderBottomColor: 'rgba(128, 128, 128, 0.2)',
                           borderBottomWidth: 1,
                           paddingBottom: 5,
-                          width: '70%',
+                          width: '80%',
                         }}>
                         <Block style={styles.userContainer}>
                           <Text>

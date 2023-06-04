@@ -94,6 +94,24 @@ export default class UserService {
       return error;
     }
   }
+  async updateInfo(token?: any): Promise<any> {
+    try {
+      const accessToken = token ? token : await Helper.getDataStored(JWT_KEY);
+      const res = await api(
+        `/users/me`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          method: 'GET',
+        },
+      );
+      return res?.data;
+    } catch (error) {
+      return error;
+    }
+  }
   async vnPay(amount): Promise<any> {
     try {
       const accessToken = await Helper.getDataStored(JWT_KEY);

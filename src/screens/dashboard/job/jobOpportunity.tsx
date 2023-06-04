@@ -27,17 +27,17 @@ export default function JobScreen({navigation}) {
           <Block style={styles.container_top}>
             <Text style={styles.container_heading}>Cơ hội việc làm</Text>
             <Text style={styles.container_desc}>
-              F8 tin rằng mỗi người đều có những tiềm năng vô hạn để trở nên
-              giỏi giang. Vấn đề là họ không áp dụng đúng phương pháp để việc
-              học hiệu quả hơn. Vì vậy F8 mong muốn giúp cho những người gặp khó
-              khăn trong việc học hành nói chung và học lập trình nói riêng được
-              tiếp cận các phương pháp, kinh nghiệm học lập trình thông minh để
-              trở nên giỏi thực sự.
+              LEARNIT tin rằng mỗi người đều có những tiềm năng vô hạn để trở
+              nên giỏi giang. Vấn đề là họ không áp dụng đúng phương pháp để
+              việc học hiệu quả hơn. Vì vậy LEARNIT mong muốn giúp cho những
+              người gặp khó khăn trong việc học hành nói chung và học lập trình
+              nói riêng được tiếp cận các phương pháp, kinh nghiệm học lập trình
+              thông minh để trở nên giỏi thực sự.
             </Text>
           </Block>
           <Block style={styles.container_body}>
             <Text style={styles.container_heading_sub}>
-              5 việc làm đang mở tại F8
+              5 việc làm đang mở tại LEARNIT
             </Text>
             <TouchableOpacity
               style={styles.listJobs_wrapper}

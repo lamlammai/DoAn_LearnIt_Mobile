@@ -46,7 +46,7 @@ export default StyleSheet.create({
   },
   container_heading_sub: {color: '#727272', fontSize: 20, fontWeight: '900'},
   container_desc: {
-    color: '#292929',
+    color: '#474747',
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 22,

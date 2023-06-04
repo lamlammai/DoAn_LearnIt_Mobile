@@ -14,28 +14,28 @@ import Dimens from '@base/common/Dimens';
 
 const exampleItems = [
   {
-    title: 'Khóa học HTML CSS Pro',
-    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.',
+    title: 'Lập trình hướng đối tượng trong C++    ',
+    text: 'Object-Oriented-Programming (Object-Oriented-Programming) là một phương pháp lập trình dựa trên đối tượng để tìm ra bản chất của vấn đề. Khóa học này giúp các lập trình viên học các kỹ thuật lập trình mà tất cả các yêu',
     img: Images.BG1,
   },
   {
     title: 'Thành Quả của Học Viên',
-    text: 'Đây là khóa học đầy đủ và chi tiết nhất bạn có thể tìm thấy được ở trên Internet!',
+    text: 'useEffectĐể đạt được kết quả tốt trong mọi việc ta cần xác định mục tiêu rõ ràng cho việc đó. Học lập trình cũng không là ngoại lệ.',
     img: Images.BG2,
   },
   {
-    title: 'Khóa học HTML CSS Pro',
-    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.',
+    title: 'Truyền thông máy tính &; Mạng    ',
+    text: 'Khóa học cung cấp kiến thức cơ bản và dễ hiểu về mạng máy tính và truyền thông dữ liệu cho các lập trình viên.    ',
     img: Images.BG3,
   },
   {
-    title: 'Khóa học HTML CSS Pro',
-    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.',
+    title: 'Cấu trúc dữ liệu và thuật toán    ',
+    text: 'Khóa học này sẽ giúp bạn hiểu các thuật toán cũng như bản chất của cấu trúc dữ liệu - điều kiện để trở thành lập trình viên giỏi.    ',
     img: Images.BG4,
   },
   {
-    title: 'Khóa học HTML CSS Pro',
-    text: 'Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. ',
+    title: 'Giới thiệu về SQL    ',
+    text: 'Hiểu và phân biệt các thiết bị mạng. Hiểu được tầm quan trọng và ứng dụng thực tế của mạng Khả năng đưa ra lựa chọn về các gói mạng cơ bản trong thực tế ',
     img: Images.BG5,
   },
 ];
